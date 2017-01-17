@@ -6,5 +6,6 @@
 /target/
 /.checkstyle
 /.idea
+/data
 *.iml
 
