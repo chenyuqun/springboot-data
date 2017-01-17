@@ -4,7 +4,6 @@ import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -36,8 +35,6 @@ public class Config {
 
     @Bean
     public Client client() throws Exception{
-//        int port=9300;
-//        String hostname="10.10.12.48";
         TransportClient transportClient = TransportClient.builder().build();
         String[] addressList = hostname.split(",");
         for (int i = 0; i < addressList.length; i++) {
