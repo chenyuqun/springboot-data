@@ -1,17 +1,17 @@
 package com.alex.api.repository;
 
-import java.util.List;
-
 import com.alex.api.entity.Todo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface TodoRepository extends CrudRepository<Todo, Long>{
 
-    public List<Todo> findAll();
-    public Todo findOne(Long id);
-    public Todo save(Todo todo);
-    public void delete(Long id);
+     List<Todo> findAll();
+     Todo findOne(Long id);
+     Todo save(Todo todo);
+     void delete(Long id);
 
 }

@@ -9,7 +9,7 @@ import com.thoughtworks.xstream.io.xml.StaxDriver;
 public class XStreamUtil {
     private static XStream xStream = new XStream(new StaxDriver());
 
-    public static String javaBeanToXmlls(Object obj) {
+    public static String javaBeanToXml(Object obj) {
         xStream.aliasType(obj.getClass().getSimpleName(), obj.getClass());
         xStream.autodetectAnnotations(true);
         return xStream.toXML(obj);
