@@ -31,9 +31,6 @@ public class Article implements Serializable {
     /**所属教程*/
     private Tutorial tutorial;
 
-    //setters and getters
-    //toString
-
     public Long getId() {
         return id;
     }

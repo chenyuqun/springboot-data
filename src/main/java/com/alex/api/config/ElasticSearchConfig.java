@@ -22,7 +22,7 @@ import java.net.InetAddress;
 @Configuration
 @PropertySource("classpath:application.properties")
 @EnableElasticsearchRepositories(basePackages = "com/alex/api/repository/data/elasticsearch")
-public class Config {
+public class ElasticSearchConfig {
     @Value("${elasticsearch.hostname}")
     private String hostname;
     @Value("${elasticsearch.port}")
