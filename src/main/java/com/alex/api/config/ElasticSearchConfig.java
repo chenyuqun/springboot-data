@@ -14,7 +14,7 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 import java.net.InetAddress;
 
 /**
- * Function:
+ * Function: 可以支持es集群接入
  *
  * @author Alex
  * @date 2017/1/17
