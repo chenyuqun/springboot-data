@@ -1,4 +1,4 @@
-package com.alex.api.entity;
+package com.alex.api.entity.data.jpa;
 import java.util.Date;
 
 import javax.persistence.Entity;

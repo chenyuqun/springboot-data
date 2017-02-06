@@ -1,6 +1,6 @@
-package com.alex.api.repository;
+package com.alex.api.repository.data.jpa;
 
-import com.alex.api.entity.Request;
+import com.alex.api.entity.data.jpa.Request;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

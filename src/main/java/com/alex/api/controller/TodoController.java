@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import com.alex.api.entity.Todo;
-import com.alex.api.repository.TodoRepository;
+import com.alex.api.entity.data.jpa.Todo;
+import com.alex.api.repository.data.jpa.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

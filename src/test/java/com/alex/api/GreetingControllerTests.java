@@ -20,11 +20,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.alex.api.entity.Todo;
+import com.alex.api.entity.data.jpa.Ticket;
+import com.alex.api.entity.data.jpa.Todo;
 import com.alex.api.entity.data.elasticsearch.Article;
 import com.alex.api.entity.data.elasticsearch.Author;
 import com.alex.api.entity.data.elasticsearch.Tutorial;
-import com.alex.api.repository.TodoRepository;
+import com.alex.api.repository.data.jpa.HotelDetailRepository;
+import com.alex.api.repository.data.jpa.TicketRepository;
+import com.alex.api.repository.data.jpa.TodoRepository;
 import com.alex.api.repository.data.elasticsearch.ArticleSearchRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,6 +50,10 @@ public class GreetingControllerTests {
     private TodoRepository todoRepository;
     @Autowired
     private ArticleSearchRepository articleSearchRepository;
+    @Autowired
+    private TicketRepository ticketRepository;
+    @Autowired
+    private HotelDetailRepository hotelDetailRepository;
     @Test
     public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
 
@@ -99,5 +106,14 @@ public class GreetingControllerTests {
     }
 
 
+    @Test
+    public void testGetTicket(){
+        Ticket ticket=ticketRepository.findOne(1);
+        System.out.println(ticket.toString());
+    }
 
+    @Test
+    public void testGetHotel(){
+        System.out.println(hotelDetailRepository.count());
+    }
 }

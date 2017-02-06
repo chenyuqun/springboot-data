@@ -1,4 +1,4 @@
-package com.alex.api.entity;
+package com.alex.api.entity.data.jpa;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
