@@ -11,7 +11,9 @@ import java.sql.Date;
  */
 @Entity
 @Table(name = "ticket", schema = "api",catalog = "api")
-public class Ticket {
+public class Ticket implements java.io.Serializable{
+
+    private static final long serialVersionUID = 4635707745500790942L;
     private int id;
     private String provinceName;
     private String cityName;

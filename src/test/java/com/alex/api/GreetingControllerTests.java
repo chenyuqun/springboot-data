@@ -37,6 +37,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.Date;
 
 @RunWith(SpringRunner.class)
@@ -115,5 +118,25 @@ public class GreetingControllerTests {
     @Test
     public void testGetHotel(){
         System.out.println(hotelDetailRepository.count());
+    }
+
+
+    /**
+     * 只能执行一次
+     * @throws UnsupportedEncodingException
+     */
+    @Test
+    public void testChangeTicket() throws UnsupportedEncodingException {
+        File file=new File("C:\\Users\\AW\\Desktop\\新建文件夹");
+        for(File scenery:file.listFiles()){
+            String path="http://img.mangocity.com/scenery/"+scenery.getName()+"/";
+            String scenicPic="";
+            for(File pic:scenery.listFiles()){
+                scenicPic+=path+URLEncoder.encode(pic.getName(),"UTF-8")+",";
+            }
+            Ticket ticket=ticketRepository.findOne(Integer.valueOf(scenery.getName()));
+            ticket.setScenicPicture(scenicPic+ticket.getScenicPicture());
+            ticketRepository.save(ticket);
+        }
     }
 }
