@@ -1,6 +1,7 @@
 package com.alex.api.entity.data.mongo;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -9,10 +10,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author Alex
  * @date 2017/2/8
  */
-//@Document
+@Document(collection = "cyq")
 public class User {
     @Id
     private Long id;
+    //@DBRef(db = "test")
     private String username;
     private Integer age;
 
